@@ -23,3 +23,12 @@ jobs:
       - name: Run tests with coverage
         run: npm run test:coverage
         continue-on-error: true
+  docker:
+    name: Docker Build
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build Docker image
+        run: docker build -t weather-app .
+
