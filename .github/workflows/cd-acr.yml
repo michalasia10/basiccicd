@@ -33,7 +33,7 @@ jobs:
       - name: Login to Azure Container Registry
         run: |
           az acr login --name ${{ vars.ACR_NAME }}
-            - name: Generate image metadata
+      - name: Generate image metadata
         id: meta
         run: |
           echo "DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
